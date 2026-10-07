@@ -1,0 +1,31 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+*.swp
+*.swo
+
+# Raw tool output and captures, not committed as evidence
+*.pcap
+*.pcapng
+Responder/logs/
+*.potfile
+hashcat.log
+
+# VM disks, ISOs and snapshots must never live in this repo
+# (VMs live in the Machines directory, outside the repo entirely,
+# same convention as the rest of the portfolio)
+*.vmdk
+*.vmx
+*.vmxf
+*.vmsd
+*.vmsn
+*.nvram
+*.iso
+*.ova
+*.ovf
+*.vdi
+*.vhd
+*.vhdx
