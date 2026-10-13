@@ -4,7 +4,7 @@
 
 **Portfolio:** WolfSec Labs
 
-**Status:** Draft
+**Status:** Final
 
 ## Overview
 
@@ -64,5 +64,9 @@ considered done when the attack that used to work no longer does.
 
 ## Current Status
 
-Remediation scope locked. Hardening execution starts next, finding by finding,
-each followed by its re-attack proof.
+Complete. All three findings Hunt left open are remediated and validated by
+re-attack: initial access (LLMNR, NBT-NS and mDNS) now captures nothing, the
+service account offers no escalation path, and weak passwords are rejected by
+policy. See the [hardening guide](../setup/hardening-guide.md) and the
+[engineering journal](../notes/engineering-journal.md) for the full
+before-and-after.

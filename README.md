@@ -8,6 +8,8 @@ then re-runs Hunt's attack chain to show each fix actually holds. Nothing here
 is a hypothetical control. Every change traces back to a specific finding, and
 every fix is validated by re-attack rather than assumed.
 
+![Hardening results](assets/diagrams/hardening-results.svg)
+
 ## What Forge fixes
 
 The input to Forge is the Hunt findings report. Three findings were left open
@@ -56,11 +58,11 @@ the attacks.
 ## Roadmap
 
 - Remediation scope and approach — complete
-- F-02 fix: disable LLMNR/NBT-NS by GPO — planned
-- F-01 fix: remediate the service account (least privilege, AES) — planned
-- F-03 fix: password policy and fine-grained policy — planned
-- Re-attack validation — planned
-- Forge v1.0 — planned
+- F-02 fix: disable LLMNR/NBT-NS/mDNS by GPO — complete
+- F-01 fix: remediate the service account (least privilege, AES) — complete
+- F-03 fix: password policy and fine-grained policy — complete
+- Re-attack validation — complete
+- Forge v1.0 — complete
 
 ## WolfSec Labs portfolio
 

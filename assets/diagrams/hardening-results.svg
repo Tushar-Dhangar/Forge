@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 760" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="920" height="760" fill="#ffffff"/>
+
+  <text x="40" y="44" font-size="24" font-weight="700" fill="#0f172a">Forge · Hardening Results</text>
+  <text x="40" y="70" font-size="15" fill="#475569">The Hunt attack chain, re-run against the hardened environment</text>
+
+  <rect x="648" y="34" width="14" height="14" rx="3" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="668" y="46" font-size="12" fill="#475569">attack step now blocked</text>
+
+  <line x1="230" y1="150" x2="230" y2="640" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Stage 1 -->
+  <rect x="80" y="110" width="300" height="80" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="100" y="140" font-size="16" font-weight="700" fill="#0f172a">Initial access</text>
+  <text x="100" y="162" font-size="13" fill="#475569">LLMNR / NBT-NS / mDNS poisoning</text>
+  <text x="100" y="180" font-size="13" fill="#475569">Responder on KALI01</text>
+  <rect x="470" y="110" width="370" height="80" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="488" y="138" font-size="14" font-weight="700" fill="#166534">Blocked</text>
+  <text x="488" y="159" font-size="12.5" fill="#14532d">LLMNR off by GPO, NBT-NS and mDNS off by</text>
+  <text x="488" y="176" font-size="12.5" fill="#14532d">startup script. Responder captures nothing.</text>
+  <line x1="230" y1="190" x2="230" y2="238" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Stage 2 -->
+  <rect x="80" y="240" width="300" height="80" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="100" y="270" font-size="16" font-weight="700" fill="#0f172a">Privilege escalation</text>
+  <text x="100" y="292" font-size="13" fill="#475569">Kerberoast svc-appsvc</text>
+  <text x="100" y="310" font-size="13" fill="#475569">crack the service ticket</text>
+  <rect x="470" y="240" width="370" height="80" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="488" y="268" font-size="14" font-weight="700" fill="#166534">Neutralised</text>
+  <text x="488" y="289" font-size="12.5" fill="#14532d">removed from Domain Admins, AES-only,</text>
+  <text x="488" y="306" font-size="12.5" fill="#14532d">30-char password. Ticket leads nowhere.</text>
+  <line x1="230" y1="320" x2="230" y2="368" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Stage 3 -->
+  <rect x="80" y="370" width="300" height="80" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="100" y="400" font-size="16" font-weight="700" fill="#0f172a">Credential cracking</text>
+  <text x="100" y="422" font-size="13" fill="#475569">offline crack of weak passwords</text>
+  <text x="100" y="440" font-size="13" fill="#475569">John / hashcat + wordlist</text>
+  <rect x="470" y="370" width="370" height="80" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="488" y="398" font-size="14" font-weight="700" fill="#166534">Blocked</text>
+  <text x="488" y="419" font-size="12.5" fill="#14532d">15-char domain policy, 25-char policy for</text>
+  <text x="488" y="436" font-size="12.5" fill="#14532d">service accounts. Weak passwords refused.</text>
+  <line x1="230" y1="450" x2="230" y2="498" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Result -->
+  <rect x="80" y="500" width="760" height="70" rx="10" fill="#0f172a" stroke="#0f172a"/>
+  <text x="100" y="532" font-size="18" font-weight="700" fill="#ffffff">Attack chain broken at every stage</text>
+  <text x="100" y="555" font-size="13" fill="#cbd5e1">the full domain compromise Hunt achieved is no longer reachable</text>
+
+  <!-- Detection note -->
+  <rect x="80" y="590" width="760" height="56" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="100" y="615" font-size="13.5" font-weight="700" fill="#1e3a8a">Sentinel still watching</text>
+  <text x="100" y="634" font-size="12.5" fill="#1e40af">the custom Kerberoasting rule from Hunt (rule 100010) remains in place alongside these fixes</text>
+
+  <text x="40" y="700" font-size="12" fill="#94a3b8">WolfSec Labs · Forge · full before and after in docs/setup/hardening-guide.md</text>
+</svg>
